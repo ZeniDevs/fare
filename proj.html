@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Satellite Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    .typewriter p {
+      overflow: hidden;
+      border-right: .15em solid #00ffcc;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .1em;
+      animation: typing 4s steps(40, end), blink .75s step-end infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+<!-- Splash Screen -->
+<div id="splash" class="fixed inset-0 flex flex-col items-center justify-center bg-black z-50">
+  <div class="typewriter text-center text-teal-400 text-2xl">
+    <p>Made with Passion for Science Exhibition</p>
+  </div>
+  <p class="mt-4 text-lg text-gray-300">- By Ujjwal Kumar Singh IX A, Roll- 30</p>
+</div>
+
+<!-- Slideshow -->
+<div class="max-w-4xl mx-auto mt-20 text-center">
+  <div class="slideshow">
+    <div class="slide hidden">
+      <img class="rounded-2xl shadow-lg" src="https://www.istockphoto.com/photos/hubble-telescope">
+      <p class="mt-4">Hubble Space Telescope - capturing deep space wonders.</p>
+    </div>
+    <div class="slide hidden">
+      <img class="rounded-2xl shadow-lg" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/ISS_from_ATV-5_%28wide%29.jpg">
+      <p class="mt-4">International Space Station - a hub for astronauts in orbit.</p>
+    </div>
+    <div class="slide hidden">
+      <img class="rounded-2xl shadow-lg" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/NOAA_weather_satellite.jpg">
+      <p class="mt-4">Weather Satellite - monitoring Earth’s climate and storms.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div class="max-w-5xl mx-auto my-16 p-8 bg-gray-800 rounded-2xl shadow-xl">
+  <h2 class="text-3xl font-bold text-center mb-8 text-teal-400">Satellite Dashboard (Demo Data)</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="bg-gray-700 p-6 rounded-xl text-center">
+      <h3 class="text-xl font-semibold">Satellite Name</h3>
+      <p class="mt-2">INSAT-3DR</p>
+    </div>
+    <div class="bg-gray-700 p-6 rounded-xl text-center">
+      <h3 class="text-xl font-semibold">Orbit Height</h3>
+      <p class="mt-2">36,000 km</p>
+    </div>
+    <div class="bg-gray-700 p-6 rounded-xl text-center">
+      <h3 class="text-xl font-semibold">Status</h3>
+      <p class="mt-2">Operational ✅</p>
+    </div>
+    <div class="bg-gray-700 p-6 rounded-xl text-center">
+      <h3 class="text-xl font-semibold">Data Collected</h3>
+      <p class="mt-2">Weather, Cyclones, Communication</p>
+    </div>
+  </div>
+</div>
+
+<!-- Extra Image Gallery -->
+<div class="max-w-5xl mx-auto mb-20">
+  <h2 class="text-2xl text-center font-bold text-teal-300 mb-6">More Satellite Images</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <img class="rounded-xl shadow-lg" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Envisat_rendering.jpg">
+    <img class="rounded-xl shadow-lg" src="https://upload.wikimedia.org/wikipedia/commons/9/99/GSAT-10.jpg">
+    <img class="rounded-xl shadow-lg" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Terra_satellite.jpg">
+  </div>
+</div>
+
+<script>
+  // Splash timeout
+  setTimeout(() => {
+    document.getElementById('splash').style.display = 'none';
+  }, 6000);
+
+  // Slideshow
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.add("hidden");
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].classList.remove("hidden");
+    setTimeout(showSlides, 3000);
+  }
+</script>
+
+</body>
+</html>
